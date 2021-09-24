@@ -17,7 +17,8 @@ function useContentTypes() {
       // Get All content Types
       const { data } = await request("/content-manager/content-types");
       const contentTypes = data.filter(({ uid }) =>
-        uid.startsWith("application::")
+        // uid.startsWith("application::")
+        true
       );
 
       // Get Permissions of each content Type

@@ -87,6 +87,9 @@ function cleanFields(item, options, attributes) {
         }
       }
 
+      if (type === "relation" && model === "role") {
+        return delete mappedItem[itemKey];
+      }
       if (type === "relation") {
         const { attributes } = model
           ? strapi.models[model]
